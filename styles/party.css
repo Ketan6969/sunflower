@@ -1,139 +1,230 @@
 body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow: auto;
-    font-family: Arial, sans-serif;
-    background-color: transparent;
-    color: #fff;
-  }
-  
-  #party-room {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-  
-  #stage {
-    position: absolute;
-    bottom: 40%;
-    width: 100%;
-    height: 50%;
-    text-align: center;
-    z-index: 10;
-  }
-  
-  #stage-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  #dj-table {
-    position: absolute;
-    bottom: 3%;
-    left: 47%;
-    transform: translateX(-50%);
-    z-index: 5;
-  }
-  
-  #dj-table img {
-    width: 250px;
-    height: auto;
-    
-  }
-  
-  #dj {
-    position: absolute;
-    bottom: 20px;
-    left: 10%;
-    transform: translateX(-50%);
-    width: 20px;
-    height: 50px;
-   
-    animation: dance 2s infinite;
-    z-index: -1;
-  }
-  
-  @keyframes dance {
-    0%, 100% {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: auto;
+  font-family: Arial, sans-serif;
+  background-color: transparent;
+  color: #fff;
+}
+
+#party-room {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#party-room::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(2, 8, 62, 0.874);
+  z-index: 1;
+  pointer-events: none;
+}
+
+#stage {
+  position: absolute;
+  bottom: 40%;
+  width: 100%;
+  height: 50%;
+  text-align: center;
+  z-index: 10;
+}
+
+#stage-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: contrast(1.2);
+}
+
+#dj-table {
+  position: absolute;
+  bottom: 3%;
+  left: 47%;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+
+#dj-table img {
+  width: 250px;
+  height: auto;
+}
+
+#dj {
+  position: absolute;
+  bottom: 20px;
+  left: 10%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 50px;
+  animation: dance 2s infinite;
+  z-index: -1;
+}
+
+@keyframes dance {
+  0%, 100% {
       transform: translateY(0);
-    }
-    50% {
+  }
+  50% {
       transform: translateY(-20px);
-    }
   }
-  
-  #lights {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1000;
-  }
-  
-  .light {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-  }
-  
-  #light1 {
-    top: 10%;
-    left: 140%;
-    animation: lightEffect1 3s infinite;
-    
-  }
-  
-  #light2 {
-    
-    top: 20%;
-    right: 10%;
-    animation: lightEffect2 4s infinite;
-    
-  }
-  
-  #light3 {
-    top: 20%;
-    left: 20%;
-    animation: lightEffect3 5s infinite;
-  }
-  
-  @keyframes lightEffect1 {
-    0%, 100% {
+}
+
+#lights {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+
+.light {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+}
+
+#light1 {
+  top: 10%;
+  left: 140%;
+  animation: lightEffect1 3s infinite;
+}
+
+#light2 {
+  top: 20%;
+  right: 10%;
+  animation: lightEffect2 4s infinite;
+}
+
+#light3 {
+  top: 20%;
+  left: 20%;
+  animation: lightEffect3 5s infinite;
+}
+
+@keyframes lightEffect1 {
+  0%, 100% {
       opacity: 0.5;
-    }
-    50% {
+  }
+  50% {
       opacity: 1;
-    }
   }
-  
-  @keyframes lightEffect2 {
-    0%, 100% {
+}
+
+@keyframes lightEffect2 {
+  0%, 100% {
       opacity: 0.3;
-    }
-    50% {
+  }
+  50% {
       opacity: 0.9;
-    }
   }
-  
-  @keyframes lightEffect3 {
-    0%, 100% {
+}
+
+@keyframes lightEffect3 {
+  0%, 100% {
       opacity: 0.4;
-    }
-    50% {
+  }
+  50% {
       opacity: 0.8;
-    }
   }
-  
-  #fireworks {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: url('images/fireworks.gif') no-repeat center center/cover;
-    display: none;
-    z-index: 20;
+}
+
+#fireworks {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url('images/fireworks.gif') no-repeat center center/cover;
+  display: none;
+  z-index: 20;
+}
+
+#dance-floor {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40%;
+  text-align: center;
+  z-index: 15;
+}
+
+.dancer {
+  position: absolute;
+  width: 100px;
+  height: auto;
+  animation: danceMove 1.5s infinite;
+}
+
+#dancer1 {
+  left: 30%;
+  animation-delay: 0s;
+}
+
+#dancer2 {
+  left: 50%;
+  animation-delay: 0.5s;
+}
+
+#dancer3 {
+  left: 20%;
+  animation-delay: 1s;
+}
+
+#dancer4 {
+  left: 55%;
+  animation-delay: 1s;
+}
+
+#dancer5 {
+  left: 40%;
+  animation-delay: 1s;
+}
+
+@keyframes danceMove {
+  0%, 100% {
+      transform: translateY(0);
   }
-  
+  50% {
+      transform: translateY(-20px);
+  }
+}
+
+.floor {
+  background-color: rgba(0, 0, 0, 0.173);
+  height: 100%;
+  z-index: -1;
+  top: 10%;
+  position: absolute;
+  width: 100%;
+}
+
+#music-controls {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 2000;
+}
+
+#music-controls button, #music-controls input[type="range"] {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#music-controls button:hover, #music-controls input[type="range"]:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+#music-controls input[type="range"] {
+  width: 100px;
+}
