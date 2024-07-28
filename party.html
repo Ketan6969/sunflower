@@ -8,10 +8,11 @@
   <link rel="stylesheet" href="styles/fireworks.css">
 </head>
 <body>
-  <canvas id="canvas" ></canvas>
+  <canvas id="canvas"></canvas>
   <div id="party-room">
-    
-    <div id="stars"></div>
+    <div id="stars">
+      <img src="images/moon.png" alt="moon" id="moon">
+    </div>
     <div id="stage">
       <img src="images/stage.png" alt="Stage" id="stage-img">
       <div id="dj-table">
@@ -33,6 +34,17 @@
       <img src="images/dj.png" alt="Dancer 3" class="dancer" id="dancer5">
     </div>
   </div>
+
+  <!-- Music controls -->
+  <div id="music-controls">
+    <audio id="audio"></audio>
+    <button id="play-button">Play</button>
+    <button id="pause-button">Pause</button>
+    <button id="prev-button">Previous</button>
+    <button id="next-button">Next</button>
+    <input type="range" id="volume-control" min="0" max="100" value="50">
+  </div>
+
   <script src="scripts/party.js"></script>
   <script src="scripts/fireworks.js"></script>
 </body>

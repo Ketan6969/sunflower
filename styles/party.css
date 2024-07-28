@@ -4,7 +4,7 @@ body, html {
   height: 100%;
   overflow: auto;
   font-family: Arial, sans-serif;
-  background-color: #000; /* Dark background for night effect */
+  /* background-color: #000; Dark background for night effect */
   color: #fff;
   background: linear-gradient(to bottom, #0d1b2a, #000); /* Gradient for night sky effect */
 }
@@ -131,6 +131,7 @@ body, html {
   height: 40%;
   text-align: center;
   z-index: 15;
+  background: linear-gradient(to bottom, #4b4f54, #0505058b); 
 }
 
 /* #dance-floor{
@@ -201,4 +202,67 @@ body, html {
   background: transparent url('images/stars.png') repeat; /* Add your stars image */
   z-index: 1;
   opacity: 0.7;
+}
+
+/* music controls */
+
+#music-controls {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 1000;
+}
+
+#music-controls button {
+  background-color: #1f4068; /* Dark blue background */
+  color: #fff; /* White text */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#music-controls button:hover {
+  background-color: #1b1b2f; /* Darker blue on hover */
+}
+
+#music-controls input[type="range"] {
+  /* -webkit-appearance: none; */
+  width: 150px;
+  height: 5px;
+  background: #1f4068; /* Dark blue background */
+  outline: none;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+#music-controls input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #e43f5a; /* Red thumb */
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+#music-controls input[type="range"]::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  background: #e43f5a; /* Red thumb */
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+#moon{
+  height: 25%;
+  top: 4%;
+  width: 20%;
+  z-index: -1;
 }

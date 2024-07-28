@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', function() {
   const volumeControl = document.getElementById('volume-control');
 
   const playlist = [
-    'path/to/song1.mp3',
-    'path/to/song2.mp3',
-    'path/to/song3.mp3'
+    'music/song1.mp3',
+    'music/song2.mp3',
+    'music/song3.mp3'
   ];
   
   let currentTrack = 0;
