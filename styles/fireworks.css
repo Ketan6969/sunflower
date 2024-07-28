@@ -1,0 +1,13 @@
+/* fireworks.css */
+/* body {
+    margin: 0;
+    background: #000;
+  } */
+  canvas {
+    position: absolute;
+    display: block;
+    z-index: 100;
+    bottom: 40%;
+    width: 120%;
+  }
+  

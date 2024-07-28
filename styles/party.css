@@ -4,8 +4,9 @@ body, html {
   height: 100%;
   overflow: auto;
   font-family: Arial, sans-serif;
-  background-color: transparent;
+  background-color: #000; /* Dark background for night effect */
   color: #fff;
+  background: linear-gradient(to bottom, #0d1b2a, #000); /* Gradient for night sky effect */
 }
 
 #party-room {
@@ -13,18 +14,6 @@ body, html {
   width: 100%;
   height: 100%;
   overflow: hidden;
-}
-
-#party-room::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(2, 8, 62, 0.874);
-  z-index: 1;
-  pointer-events: none;
 }
 
 #stage {
@@ -40,7 +29,7 @@ body, html {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: contrast(1.2);
+  filter: contrast(1.2); /* Increase contrast for better visibility */
 }
 
 #dj-table {
@@ -132,17 +121,7 @@ body, html {
   }
   50% {
       opacity: 0.8;
-  }
 }
-
-#fireworks {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: url('images/fireworks.gif') no-repeat center center/cover;
-  display: none;
-  z-index: 20;
 }
 
 #dance-floor {
@@ -153,6 +132,14 @@ body, html {
   text-align: center;
   z-index: 15;
 }
+
+/* #dance-floor{
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 40%;
+  z-index: 15;
+} */
 
 .dancer {
   position: absolute;
@@ -204,27 +191,14 @@ body, html {
   width: 100%;
 }
 
-#music-controls {
+/* Night effect - Stars */
+#stars {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
-  z-index: 2000;
-}
-
-#music-controls button, #music-controls input[type="range"] {
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  margin: 5px;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-#music-controls button:hover, #music-controls input[type="range"]:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-#music-controls input[type="range"] {
-  width: 100px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent url('images/stars.png') repeat; /* Add your stars image */
+  z-index: 1;
+  opacity: 0.7;
 }
