@@ -48,7 +48,7 @@ pipeline{
                     echo 'Deploying the application!!'
                     withCredentials([sshUserPrivateKey(credentialsId: "aws-creds", keyFileVariable: 'SSH_KEY')]){
                         sh '''
-                            ssh -i $SSH_KEY ${SERVER_USER}@${SERVER_IP} "
+                            ssh -i $SSH_KEY -o strictHostKeyChecking=no ${SERVER_USER}@${SERVER_IP} "
                                 docker pull ${DOCKER_IMAGE}:latest
                                 docker stop sunflower-container || true 
                                 docker rm sunflower-container || true
