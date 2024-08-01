@@ -4,7 +4,7 @@ pipeline{
         DOCKER_CREDENTIAL_ID='docker-hub-credentials'
         DOCKER_REGISTRY='docker.io'
         DOCKER_IMAGE='ketan2004/sunflower'
-        SERVER_IP = 54.156.171.153
+        SERVER_IP = '54.156.171.153'
         SERVER_USER = 'ubuntu'
     }
     stages {
