@@ -4,6 +4,8 @@ pipeline{
         DOCKER_CREDENTIAL_ID='docker-hub-credentials'
         DOCKER_REGISTRY='docker.io'
         DOCKER_IMAGE='ketan2004/sunflower'
+        SERVER_IP = 54.156.171.153
+        SERVER_USER = 'ubuntu'
     }
     stages {
         stage('Checkout'){
@@ -40,6 +42,23 @@ pipeline{
         }
 
     }
+        stage('deploy'){
+            steps{
+                script {
+                    echo 'Deploying the application!!'
+                    withCredentials([sshUserPrivateKey(credentialsId: "aws-creds", keyFileVariable: 'SSH_KEY')]){
+                        '''
+                            ssh -i $SSH_KEY ${SERVER_USER}@${SERVER_IP} '
+                                docker pull ${DOCKER_IMAGE}:latest
+                                docker stop sunflower-container || true 
+                                docker rm sunflower-container || true
+                                docker run -d -p --name sunflower-container ${DOCKER_IMAGE}:latest
+                        '''
+                    }
+                    echo 'Deployment complete!!'
+                }
+            }
+        }
 
 }
 post{
