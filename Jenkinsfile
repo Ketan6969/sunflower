@@ -48,11 +48,11 @@ pipeline{
                     echo 'Deploying the application!!'
                     withCredentials([sshUserPrivateKey(credentialsId: "aws-creds", keyFileVariable: 'SSH_KEY')]){
                         sh '''
-                            ssh -i $SSH_KEY ${SERVER_USER}@${SERVER_IP} '
+                            ssh -i $SSH_KEY ${SERVER_USER}@${SERVER_IP} "
                                 docker pull ${DOCKER_IMAGE}:latest
                                 docker stop sunflower-container || true 
                                 docker rm sunflower-container || true
-                                docker run -d -p 8000:80 --name sunflower-container ${DOCKER_IMAGE}:latest
+                                docker run -d -p 8000:80 --name sunflower-container ${DOCKER_IMAGE}:latest "
                         '''
                     }
                     echo 'Deployment complete!!'
