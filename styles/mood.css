@@ -1,0 +1,77 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0; /* Light background for mood room */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#mood-room {
+  position: relative;
+  width: 80%;
+  height: 80%;
+  background: #fff; /* White background for mood room */
+  /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#character {
+  width: 150px;
+  height: 150px;
+  background: url('../images/sunflower.png') no-repeat center center;
+  background-size: cover;
+  background-position: center;
+}
+
+#character.happy {
+  background: url('../images/avacado.png') no-repeat center center;
+  
+}
+
+#character.excited {
+  background: url('../images/egg.png') no-repeat center center;
+}
+
+#character.cozy {
+  background: url('../images/egg.png') no-repeat center center;
+}
+
+#character.sad {
+  background: url('../images/sun.png') no-repeat center center;
+}
+
+#character.festive {
+  background: url('../images/festive_character.png') no-repeat center center;
+}
+
+#character.dancing {
+  background: url('../images/dancing_character.png') no-repeat center center;
+}
+
+#items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.draggable {
+  width: 50px;
+  height: 50px;
+  margin: 0 10px;
+  cursor: grab;
+}
+
+/* .neutral{
+  width: 150px;
+  height: 150px;
+  background: url('images\sunflower.png') no-repeat center center;
+  background-size: contain;
+} */
