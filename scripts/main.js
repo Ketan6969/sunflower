@@ -8,7 +8,10 @@ const targetDate = new Date('2024-08-04T18:30:00Z').getTime(); // This is August
 
 function updateCountdown() {
   const now = new Date().getTime();
+  console.log('Current time (UTC):', new Date(now).toISOString());
+  console.log('Target time (UTC):', new Date(targetDate).toISOString());
   const distance = targetDate - now;
+  console.log('Distance (ms):', distance);
 
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
   const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
