@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   const draggables = document.querySelectorAll('.draggable');
+  const characterImage = document.getElementById('character-image');
   const character = document.getElementById('character');
 
   draggables.forEach(item => {
@@ -28,7 +29,13 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function changeMood(mood) {
-    character.className = mood;
-    // Add additional logic to change character's appearance or play sound
+    const moodImages = {
+      happy: 'images/dj.png',
+      gym: 'images/bodybuilder.png',
+      sad: 'images/banana-catc.png',
+      angry: 'images/angry.png',
+      avacado: 'images/avacado.png'
+    };
+    characterImage.src = moodImages[mood];
   }
 });

@@ -3,19 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mood Room</title>
+  <title>Birthday Room</title>
   <link rel="stylesheet" href="styles/mood.css">
+  <link rel="stylesheet" href="styles/menu.css">
 </head>
 <body>
-  <div id="mood-room">
-    <div id="character" class="neutral"></div>
+  <div id="room">
+    <div class="menu-container">
+      <button class="menu-button">☰</button>
+      <nav class="hidden-menu">
+          <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="party.html">Party</a></li>
+              <li><a href="mood.html">Something</a></li>
+          </ul>
+      </nav>
+    </div>
+    <div id="decorations">
+      <!-- <img src="images/baloons.png" alt="Balloons" class="decoration" id="baloons">
+      <img src="images/streamers.png" alt="Streamers" class="decoration" id="streamers"> -->
+      <!-- Add more decorations as needed -->
+    </div>
+    <div id="character-container">
+      <div id="character" class="neutral">
+        <img id="character-image" src="images/neutral.png" alt="Character">
+      </div>
+    </div>
     <div id="items">
-      <img src="images/egg.png" class="draggable" data-mood="happy">
-      <img src="images/sun.png" class="draggable" data-mood="excited">
-      <img src="images/teddy_bear.png" class="draggable" data-mood="cozy">
-      <img src="images/rain_cloud.png" class="draggable" data-mood="sad">
-      <img src="images/party_hat.png" class="draggable" data-mood="festive">
-      <img src="images/music_note.png" class="draggable" data-mood="dancing">
+      <img src="images/chiken.png" class="draggable" data-mood="happy">
+      <img src="images/hungry.png" class="draggable" data-mood="sad">
+      <img src="images/dumbell.png" class="draggable" data-mood="gym">
+      <img src="images/ketan.png" class="draggable" data-mood="angry" id="angry">
+      <img src="images/avacadoreal.png" class="draggable" data-mood="avacado">
+    </div>
+    <div id="instruction">
+      <p>Drag and drops items to the character!!!</p>
     </div>
   </div>
   <script src="scripts/mood.js"></script>

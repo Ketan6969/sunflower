@@ -2,64 +2,89 @@ body, html {
   margin: 0;
   padding: 0;
   height: 100%;
+  width: 100%;
   overflow: hidden;
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0; /* Light background for mood room */
   display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0; /* Fallback background color */
+}
+
+#room {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url('../images/room.png') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-#mood-room {
-  position: relative;
-  width: 80%;
-  height: 80%;
-  background: #fff; /* White background for mood room */
-  /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); */
-  display: flex;
+#decorations {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  /* display: flex; */
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
+}
+
+.decoration {
+  width: 100px;
+  /* margin: 0 10px; */
+}
+
+#baloons{
+ 
+  z-index: 1;
+  width: 100%;
+  opacity: 0.5;
+}
+
+#streamers{
+  z-index: 2;
+  width: 100%;
+  bottom: 70%;
+  opacity: 0.7;
+}
+
+#character-container {
+  position: relative;
+  z-index: 1;
 }
 
 #character {
   width: 150px;
   height: 150px;
-  background: url('../images/sunflower.png') no-repeat center center;
-  background-size: cover;
-  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.186);
+  border-radius: 8px;
+  animation: danceMove 1.5s infinite;
 }
 
-#character.happy {
-  background: url('../images/avacado.png') no-repeat center center;
-  
-}
-
-#character.excited {
-  background: url('../images/egg.png') no-repeat center center;
-}
-
-#character.cozy {
-  background: url('../images/egg.png') no-repeat center center;
-}
-
-#character.sad {
-  background: url('../images/sun.png') no-repeat center center;
-}
-
-#character.festive {
-  background: url('../images/festive_character.png') no-repeat center center;
-}
-
-#character.dancing {
-  background: url('../images/dancing_character.png') no-repeat center center;
+#character img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensures the image fits within the container */
 }
 
 #items {
+  background-color: rgba(0, 0, 0, 0.559);
+  border-color: rgba(0, 0, 0, 0.523);
+  border-radius: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+  z-index: 2; /* Ensure items are above the background */
+  padding: 10px;
 }
 
 .draggable {
@@ -69,9 +94,29 @@ body, html {
   cursor: grab;
 }
 
-/* .neutral{
-  width: 150px;
-  height: 150px;
-  background: url('images\sunflower.png') no-repeat center center;
-  background-size: contain;
-} */
+#angry{
+  height: 200;
+  width: 200;
+}
+
+@keyframes danceMove {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
+}
+
+#instruction{
+  background-color: rgba(0, 0, 0, 0.559);
+  border-color: rgba(0, 0, 0, 0.523);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  z-index: 2; /* Ensure items are above the background */
+  padding: 3px;
+  color: white;
+}

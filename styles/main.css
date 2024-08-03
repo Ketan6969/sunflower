@@ -93,15 +93,15 @@ html, body {
 
 #sunflower {
   position: absolute;
-  bottom: 10%;
+  bottom: 15%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 4;
 }
 
 #sunflower img {
-  width: 150px;
-  height: auto;
+  width: 180px;
+  height: 200px;
   animation: bloom 5s ease-in-out forwards;
 }
 
@@ -116,14 +116,14 @@ html, body {
 
 #message {
   position: absolute;
-  bottom: 50%;
+  bottom: 60%;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 2em;
+  font-size: 1.5em;
   color: #FFFFFF;
   z-index: 5;
   background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-  padding: 20px;
+  padding: 10px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
   animation: fadeIn 2s ease-in-out forwards; /* Fade-in effect */

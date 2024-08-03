@@ -2,7 +2,8 @@ const countdownElement = document.getElementById('countdown');
 const environmentElement = document.getElementById('environment');
 const messageElement = document.getElementById('message');
 
-const targetDate = new Date().getTime() + 5000; // 5 seconds from now for testing
+// Set target date to August 5th at 00:00:00
+const targetDate = new Date('2024-08-03T17:45:00').getTime();
 
 function updateCountdown() {
   const now = new Date().getTime();
