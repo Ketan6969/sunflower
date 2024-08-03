@@ -2,8 +2,9 @@ const countdownElement = document.getElementById('countdown');
 const environmentElement = document.getElementById('environment');
 const messageElement = document.getElementById('message');
 
-// Set target date to August 5th at 00:00:00
-const targetDate = new Date('2024-08-03T17:50:00').getTime();
+// Set target date to August 5th at 00:00:00 IST
+// Convert this to UTC: IST is UTC+5:30, so we subtract 5 hours and 30 minutes
+const targetDate = new Date('2024-08-04T18:30:00Z').getTime(); // This is August 5th 00:00 IST in UTC
 
 function updateCountdown() {
   const now = new Date().getTime();
