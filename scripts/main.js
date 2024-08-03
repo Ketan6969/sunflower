@@ -3,7 +3,7 @@ const environmentElement = document.getElementById('environment');
 const messageElement = document.getElementById('message');
 
 // Set target date to August 5th at 00:00:00
-const targetDate = new Date('2024-08-03T17:45:00').getTime();
+const targetDate = new Date('2024-08-03T17:50:00').getTime();
 
 function updateCountdown() {
   const now = new Date().getTime();
